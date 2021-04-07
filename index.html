@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <!-- <img src="YellowstoneMap.png"/> -->
+
+        <!-- Image map -->
+    <img src="YellowstoneMap.png" alt="YellowstoneMap" usemap="#yellowstone" width="1000" height="1197">
+
+    <map name="yellowstone">
+        <area id="yellow" shape="circle" coords="500, 500, 300" onclick="myfunc(id)">
+
+    </map>
+<!-- 
+    photo display div after a user clicks on a station -->
+    <div id="img-div" class="modal">
+        <span class="close">&times;</span>
+        <div id="img-holder"></div>
+    </div>
+    </body>
+
+     <!-- Photos stored for search feature -->
+     <img id="yellow" src="YellowstoneMap.png" height="200" style="display: none;"/>
+
+</div>
+
+    <script type="text/javascript">
+    
+        function myfunc(id) {
+            console.log(id + " station was clicked!")
+        }
+    
+        function searchTool(id) {
+            console.log("search tool")
+            var inputSrc = document.getElementById(id).src
+            modal.style.display = "block";
+            document.getElementById("img-holder").innerHTML = "<img src=" + inputSrc + " height="+ 200 + ">";
+        }
+    
+        //deals with the modal coming up. Span is the x to close out
+        var modal = document.getElementById("img-div");
+        var span = document.getElementsByClassName("close")[0];
+            span.onclick = function() {
+                modal.style.display = "none";
+    }
+    </script>
+</html>
