@@ -103,6 +103,12 @@ input[type=text] {
      <img id='NOR' src="norris.png" height="200" style="display: none;"/>
      <img id='CAN' src="canyon.png" height="200" style="display: none;"/>
      <img id='MAD' src="madison.png" height="200" style="display: none;"/>
+     <img id='OLD' src="oldfaithful.png" height="200" style="display: none;"/>
+     <img id='WES' src="grantvillage.png" height="200" style="display: none;"/>
+     <img id='GRA' src="grantvillage.png" height="200" style="display: none;"/>
+     <img id='BRI' src="bridgebay.png" height="200" style="display: none;"/>
+     <img id='LAK' src="lakevillage.png" height="200" style="display: none;"/>
+     <img id='FIS' src="fishingbridge.png" height="200" style="display: none;"/>
 
      <div id="testing" style="align-content: center; margin-left: 500px;">
         <!-- img goes here -->
@@ -119,7 +125,14 @@ input[type=text] {
             console.log("search tool");
             var inputSrc = document.getElementById(id).src;
             console.log(inputSrc);
-            document.getElementById("testing").innerHTML = "<img src=" + inputSrc + ">";
+            if (id == 'NOR' || id == 'MAM' || id == 'TOW') {
+                document.getElementById("testing").innerHTML = "<img src=" + inputSrc + ">";
+                document.getElementById("testing").style = "align-content: center; margin-left: 500px;"
+            } else {
+                document.getElementById("testing").innerHTML = "<img src=" + inputSrc + ">";
+                document.getElementById("testing").style = "align-content: center; margin-left: 200px;"
+            }
+
             // modal.style.display = "block";
             // document.getElementById("img-holder").innerHTML = "<img src=" + inputSrc + " height="+ 200 + ">";
         }
