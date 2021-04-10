@@ -7,6 +7,60 @@
         </style>
     <head>
 
+        <script src="https://d3js.org/d3.v3.min.js"></script>
+<style type="text/css">
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+body, html {
+    background-color: #d3d3d3;
+}
+
+select {
+  color: white;
+  background-color: black;
+  font-size: 30px;
+  margin-left: 710px;
+  margin-bottom: 40px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+#box {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #54acda;
+  border-width: 4px;
+  padding: 20px;
+  text-align: center;
+  margin: 20px;
+  height: 550px;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 50px;
+}
+
+#map-title {
+    border-style: solid;
+    border-color: #54acda;
+    border-width: 4px;
+    background-color: white;
+    width: 660px;
+    margin-left: 500px;
+}
+
+input[type=text] {
+  padding: 12px 20px;
+  margin: 30px 740px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+</style>
+
     </head>
 
     <body>
@@ -19,17 +73,17 @@
     <img src="YellowstoneMap.png" alt="YellowstoneMap" usemap="#yellowstone" width="1000" height="1197" style="margin-left: 350px;">
 
     <map name="yellowstone">
-        <area id="mammoth" shape="circle" coords="336, 173, 10" onclick="myfunc(id)">
-        <area id="norris" shape="circle" coords="330, 470, 10" onclick="myfunc(id)">
-        <area id="tower" shape="circle" coords="550, 250, 10" onclick="myfunc(id)">
-        <area id="canyon" shape="circle" coords="492, 458, 10" onclick="myfunc(id)"> 
-        <area id="madison" shape="circle" coords="213, 580, 10" onclick="myfunc(id)">
-        <area id="oldfaithful" shape="circle" coords="220, 800, 10" onclick="myfunc(id)">
-        <area id="bridgebay" shape="circle" coords="540, 720, 10" onclick="myfunc(id)">
-        <area id="lakevillage" shape="circle" coords="565, 670, 10" onclick="myfunc(id)">
-        <area id="fishingbridge" shape="circle" coords="600, 690, 10" onclick="myfunc(id)">
-        <area id="westthumb" shape="circle" coords="430, 855, 10" onclick="myfunc(id)">
-        <area id="grantvillage" shape="circle" coords="430, 890, 10" onclick="myfunc(id)">
+        <area id="mammoth" shape="circle" coords="336, 173, 10" onclick="searchTool('MAM')">
+        <area id="norris" shape="circle" coords="330, 470, 10" onclick="myfunc('NOR')">
+        <area id="tower" shape="circle" coords="550, 250, 10" onclick="myfunc('TOW')">
+        <area id="canyon" shape="circle" coords="492, 458, 10" onclick="myfunc('CAN')"> 
+        <area id="madison" shape="circle" coords="213, 580, 10" onclick="myfunc('MAD')">
+        <area id="oldfaithful" shape="circle" coords="220, 800, 10" onclick="myfunc('OLD')">
+        <area id="bridgebay" shape="circle" coords="540, 720, 10" onclick="myfunc('BRI')">
+        <area id="lakevillage" shape="circle" coords="565, 670, 10" onclick="myfunc('LAK')">
+        <area id="fishingbridge" shape="circle" coords="600, 690, 10" onclick="myfunc('FIS')">
+        <area id="westthumb" shape="circle" coords="430, 855, 10" onclick="myfunc('WES')">
+        <area id="grantvillage" shape="circle" coords="430, 890, 10" onclick="myfunc('GRA')">
     </map>
 <!-- 
     photo display div after a user clicks on a station -->
@@ -37,13 +91,13 @@
         <span class="close">&times;</span>
         <div id="img-holder"></div>
     </div>
-    </body>
+
 
      <!-- Photos stored for search feature -->
-     <img id="yellow" src="YellowstoneMap.png" height="200" style="display: none;"/>
+     <img id='MAM' src="popuppics\IMG_5573.JPG" height="200" style="display: none;"/>
 
 </div>
-
+</body>
     <script type="text/javascript">
     
         function myfunc(id) {
@@ -51,8 +105,8 @@
         }
     
         function searchTool(id) {
-            console.log("search tool")
-            var inputSrc = document.getElementById(id).src
+            console.log("search tool");
+            var inputSrc = document.getElementById(id).src;
             modal.style.display = "block";
             document.getElementById("img-holder").innerHTML = "<img src=" + inputSrc + " height="+ 200 + ">";
         }
