@@ -7,6 +7,8 @@
         </style>
     <head>
 
+        <title>YellowstoneMap</title>
+
         <script src="https://d3js.org/d3.v3.min.js"></script>
 <style type="text/css">
 
@@ -69,21 +71,23 @@ input[type=text] {
 
         <h2 style="text-align: center; font-family: 'Dela Gothic One', cursive;">- Tourist Guide -</h2>
 
+        <h3  style="text-align: center; font-family: 'Dela Gothic One', cursive; font-size: 20px;">A Former Employee's Favorite Parts in Each Part of the Park</h3>
+
         <!-- Image map -->
     <img src="YellowstoneMap.png" alt="YellowstoneMap" usemap="#yellowstone" width="1000" height="1197" style="margin-left: 350px;">
 
     <map name="yellowstone">
         <area id="mammoth" shape="circle" coords="336, 173, 10" onclick="searchTool('MAM')">
-        <area id="norris" shape="circle" coords="330, 470, 10" onclick="myfunc('NOR')">
-        <area id="tower" shape="circle" coords="550, 250, 10" onclick="myfunc('TOW')">
-        <area id="canyon" shape="circle" coords="492, 458, 10" onclick="myfunc('CAN')"> 
-        <area id="madison" shape="circle" coords="213, 580, 10" onclick="myfunc('MAD')">
-        <area id="oldfaithful" shape="circle" coords="220, 800, 10" onclick="myfunc('OLD')">
-        <area id="bridgebay" shape="circle" coords="540, 720, 10" onclick="myfunc('BRI')">
-        <area id="lakevillage" shape="circle" coords="565, 670, 10" onclick="myfunc('LAK')">
-        <area id="fishingbridge" shape="circle" coords="600, 690, 10" onclick="myfunc('FIS')">
-        <area id="westthumb" shape="circle" coords="430, 855, 10" onclick="myfunc('WES')">
-        <area id="grantvillage" shape="circle" coords="430, 890, 10" onclick="myfunc('GRA')">
+        <area id="norris" shape="circle" coords="330, 470, 10" onclick="searchTool('NOR')">
+        <area id="tower" shape="circle" coords="550, 250, 10" onclick="searchTool('TOW')">
+        <area id="canyon" shape="circle" coords="492, 458, 10" onclick="searchTool('CAN')"> 
+        <area id="madison" shape="circle" coords="213, 580, 10" onclick="searchTool('MAD')">
+        <area id="oldfaithful" shape="circle" coords="220, 800, 10" onclick="searchTool('OLD')">
+        <area id="bridgebay" shape="circle" coords="540, 720, 10" onclick="searchTool('BRI')">
+        <area id="lakevillage" shape="circle" coords="565, 670, 10" onclick="searchTool('LAK')">
+        <area id="fishingbridge" shape="circle" coords="600, 690, 10" onclick="searchTool('FIS')">
+        <area id="westthumb" shape="circle" coords="430, 855, 10" onclick="searchTool('WES')">
+        <area id="grantvillage" shape="circle" coords="430, 890, 10" onclick="searchTool('GRA')">
     </map>
 <!-- 
     photo display div after a user clicks on a station -->
@@ -94,9 +98,13 @@ input[type=text] {
 
 
      <!-- Photos stored for search feature -->
-     <img id='MAM' src="popuppics\IMG_5573.JPG" height="200" style="display: none;"/>
+     <img id='MAM' src="mammoth2.png" height="200" style="display: none;"/>
+     <img id='TOW' src="tower.png" height="200" style="display: none;"/>
+     <img id='NOR' src="norris.png" height="200" style="display: none;"/>
+     <img id='CAN' src="canyon.png" height="200" style="display: none;"/>
+     <img id='MAD' src="madison.png" height="200" style="display: none;"/>
 
-     <div id="testing">
+     <div id="testing" style="align-content: center; margin-left: 500px;">
         <!-- img goes here -->
     </div>
 
@@ -111,7 +119,7 @@ input[type=text] {
             console.log("search tool");
             var inputSrc = document.getElementById(id).src;
             console.log(inputSrc);
-            document.getElementById("testing").innerHTML = "<img src=" + inputSrc + " height=" + 200 + ">";
+            document.getElementById("testing").innerHTML = "<img src=" + inputSrc + ">";
             // modal.style.display = "block";
             // document.getElementById("img-holder").innerHTML = "<img src=" + inputSrc + " height="+ 200 + ">";
         }
