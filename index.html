@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<meta charset="utf-8">
 <html>
 
     <style>
@@ -96,7 +96,10 @@ input[type=text] {
      <!-- Photos stored for search feature -->
      <img id='MAM' src="popuppics\IMG_5573.JPG" height="200" style="display: none;"/>
 
-</div>
+     <div id="testing">
+        <!-- img goes here -->
+    </div>
+
 </body>
     <script type="text/javascript">
     
@@ -107,8 +110,10 @@ input[type=text] {
         function searchTool(id) {
             console.log("search tool");
             var inputSrc = document.getElementById(id).src;
-            modal.style.display = "block";
-            document.getElementById("img-holder").innerHTML = "<img src=" + inputSrc + " height="+ 200 + ">";
+            console.log(inputSrc);
+            document.getElementById("testing").innerHTML = "<img src=" + inputSrc + " height=" + 200 + ">";
+            // modal.style.display = "block";
+            // document.getElementById("img-holder").innerHTML = "<img src=" + inputSrc + " height="+ 200 + ">";
         }
     
         //deals with the modal coming up. Span is the x to close out
