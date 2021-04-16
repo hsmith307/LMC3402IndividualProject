@@ -140,21 +140,17 @@ input[type=text] {
 
 
      <!-- Photos stored for search feature -->
-     <img id='MAM' src="mammoth2.png" height="200" style="display: none;"/>
+     <img id='MAM' src="mammoth3.png" height="200" style="display: none;"/>
      <img id='TOW' src="tower.png" height="200" style="display: none;"/>
-     <img id='NOR' src="norris.png" height="200" style="display: none;"/>
-     <img id='CAN' src="canyon.png" height="200" style="display: none;"/>
-     <img id='MAD' src="madison.png" height="200" style="display: none;"/>
-     <img id='OLD' src="oldfaithful.png" height="200" style="display: none;"/>
-     <img id='WES' src="grantvillage.png" height="200" style="display: none;"/>
-     <img id='GRA' src="grantvillage.png" height="200" style="display: none;"/>
-     <img id='BRI' src="bridgebay.png" height="200" style="display: none;"/>
-     <img id='LAK' src="lakevillage.png" height="200" style="display: none;"/>
-     <img id='FIS' src="fishingbridge.png" height="200" style="display: none;"/>
-
-     <div id="testing" style="align-content: center; margin-left: 500px;">
-        <!-- img goes here -->
-    </div>
+     <img id='NOR' src="norris2.png" height="200" style="display: none;"/>
+     <img id='CAN' src="canyon2.png" height="200" style="display: none;"/>
+     <img id='MAD' src="madison2.png" height="200" style="display: none;"/>
+     <img id='OLD' src="oldfaithful2.png" height="200" style="display: none;"/>
+     <img id='WES' src="westthumb3.png" height="200" style="display: none;"/>
+     <img id='GRA' src="grantvillage2.png" height="200" style="display: none;"/>
+     <img id='BRI' src="bridgebay2.png" height="200" style="display: none;"/>
+     <img id='LAK' src="lakevillage2.png" height="200" style="display: none;"/>
+     <img id='FIS' src="fishingbridge2.png" height="200" style="display: none;"/>
 
 </body>
     <script type="text/javascript">
@@ -166,14 +162,9 @@ input[type=text] {
         function searchTool(id) {
             console.log("search tool");
             var inputSrc = document.getElementById(id).src;
-            console.log(inputSrc);
-            if (id == 'NOR' || id == 'MAM' || id == 'TOW') {
-                document.getElementById("img-holder").innerHTML = "<img src=" + inputSrc + ">";
-                document.getElementById("img-holder").style = "align-content: center; margin-left: 400px;"
-            } else {
-                document.getElementById("img-holder").innerHTML = "<img src=" + inputSrc + ">";
-                document.getElementById("img-holder").style = "align-content: center; margin-left: 120px;"
-            }
+
+            document.getElementById("img-holder").innerHTML = "<img src=" + inputSrc + ">";
+            document.getElementById("img-holder").style = "align-content: center; margin-left: 400px;"
 
             modal.style.display = "block";
             // document.getElementById("img-holder").innerHTML = "<img src=" + inputSrc + " height="+ 200 + ">";
